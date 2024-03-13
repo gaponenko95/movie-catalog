@@ -1,9 +1,9 @@
 import './Link.css';
 
-function Link({children}) {
+function Link({ children, href }) {
 	return (
-		<a className='link'>
-			{children}
+		<a className='link' href={ href }>
+			{ children }
 		</a>
 	);
 }

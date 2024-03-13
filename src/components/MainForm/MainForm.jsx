@@ -3,7 +3,7 @@ import Button from '../Button/Button.jsx';
 import { useState } from 'react';
 
 function MainForm({ placeholder, icon, buttonText, column }) {
-	const [value, setValue] = useState('');
+	const [ value, setValue ] = useState('');
 	const inputClass = icon === 'search' ? 'main-form__input icon' : 'main-form__input';
 
 	const getValue = (e) => {
@@ -14,7 +14,6 @@ function MainForm({ placeholder, icon, buttonText, column }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(value);
-		setValue('');
 	};
 
 	return (

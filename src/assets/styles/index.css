@@ -42,3 +42,12 @@ button {
 	font-weight: 400;
 	color: #fff;
 }
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

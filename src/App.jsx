@@ -15,20 +15,21 @@ function App() {
 	return (
 		<>
 			<Header>
-				<Link>
-					<Logo />
+				<Link href="#">
+					<Logo/>
 				</Link>
 				<Navigation>
-					<NavItem active >Поиск фильмов</NavItem>
-					<NavItem counter >Мои фильмы</NavItem>
-					<NavItem icon='login' >Войти</NavItem>
+					<NavItem active href="#">Поиск фильмов</NavItem>
+					<NavItem counter href="#">Мои фильмы</NavItem>
+					<NavItem icon="login" href="#">Войти</NavItem>
 				</Navigation>
 			</Header>
 			<Main>
 				<MainHeader>
 					<MainTitle>Поиск</MainTitle>
-					<Text small >Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Text>
-					<MainForm placeholder={'Введите название'} buttonText={'Искать'} icon={'search'} />
+					<Text small>Введите название фильма, сериала или мультфильма для поиска и добавления в
+						избранное.</Text>
+					<MainForm placeholder="Введите название" buttonText="Искать" icon="search"/>
 				</MainHeader>
 			</Main>
 		</>

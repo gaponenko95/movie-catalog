@@ -1,28 +1,34 @@
 import './NavItem.css';
 import Link from '../Link/Link.jsx';
 
-function NavItem({ children, icon, counter, active }) {
-	const className = `navigation__item ${active ? 'navigation__item--active' : ''}`;
+function NavItem({ children, icon, counter, active, href }) {
+	const isActive = active ? 'navigation__item--active' : '';
 	let iconElement;
-	const counterIcon = <div className="counter-icon">
-		<div className="counter-icon__circle">
-			<span className="counter-icon__count">2</span>
-		</div>
-	</div>;
 
-
-	if (icon === 'login') {
-		iconElement = <img className="navigation__item-icon" src="/login.svg" alt="Логин"/>;
-	} else if (icon === 'profile') {
-		iconElement = <img className="navigation__item-icon" src="/profile.svg" alt="Профиль"/>;
+	switch (icon) {
+	case 'login':
+		iconElement = <img className="navigation__item-icon" src="/login.svg" alt="Login"/>;
+		break;
+	case 'profile':
+		iconElement = <img className="navigation__item-icon" src="/profile.svg" alt="Profile"/>;
+		break;
+	default:
+		iconElement = null;
 	}
 
 	return (
-		<li className={className}>
-			<Link>
+		<li className={`navigation__item ${isActive}`}>
+			<Link href={href}>
 				{children}
 				{iconElement}
-				{counter ? counterIcon : null}
+				{counter ?
+					<div className="counter-icon">
+						<div className="counter-icon__circle">
+							<span className="counter-icon__count">2</span>
+						</div>
+					</div>
+					: null
+				}
 			</Link>
 		</li>
 	);
