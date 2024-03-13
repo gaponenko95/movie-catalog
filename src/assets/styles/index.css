@@ -26,13 +26,16 @@ html {
 
 body {
 	min-height: 100%;
-	background: #121829 url('../../../public/Background.svg') no-repeat;
+	background: #121829 url('/Background.svg') no-repeat;
 	background-size: cover;
 }
 
 #root {
 	max-width: 1200px;
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
 }
 
 button {
