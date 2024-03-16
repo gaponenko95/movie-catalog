@@ -1,9 +1,9 @@
 import './MainTitle.css';
 
-function Title({ children }) {
+function Title({ text }) {
 	return (
 		<>
-			<h1 className="main__title">{children}</h1>
+			<h1 className='main__title'>{text}</h1>
 		</>
 	);
 }

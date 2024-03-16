@@ -1,11 +1,9 @@
 import './Navigation.css';
 
-function Navigation({children}) {
+function Navigation({ children }) {
 	return (
-		<nav className="navigation">
-			<ul className="navigation__list">
-				{children}
-			</ul>
+		<nav className='navigation'>
+			<ul className='navigation__list'>{children}</ul>
 		</nav>
 	);
 }

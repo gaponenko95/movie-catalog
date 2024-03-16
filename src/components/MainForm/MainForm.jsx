@@ -1,35 +1,28 @@
 import './MainForm.css';
 import Button from '../Button/Button.jsx';
-import { useState } from 'react';
 
-function MainForm({ placeholder, icon, buttonText, column }) {
-	const [ value, setValue ] = useState('');
+function MainForm({ placeholder, icon, buttonText, column, onSubmit }) {
 	const inputClass = icon === 'search' ? 'main-form__input icon' : 'main-form__input';
 
-	const getValue = (e) => {
+	const handleSubmit = e => {
 		e.preventDefault();
-		setValue(e.target.value);
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log(value);
+		const value = new FormData(e.target).get('search');
 	};
 
 	return (
-		<form className={column ? 'main-form column' : 'main-form'} onSubmit={handleSubmit}>
-			<div className="main-form__input-wrapper">
+		<form className={`main-form ${column ? 'column' : ''}`} onSubmit={onSubmit}>
+			<div className='main-form__input-wrapper'>
 				<input
-					type='text'
+					type='search'
 					name='search'
-					placeholder={ placeholder }
-					className={ inputClass }
-					value={value}
-					onChange={getValue}
+					placeholder={placeholder}
+					className={inputClass}
 				/>
-				{ icon === 'search' && <img className="main-form__icon" src="/search.svg" alt="Поиск"/> }
+				{icon === 'search' && (
+					<img className='main-form__icon' src='/search.svg' alt='Search' />
+				)}
 			</div>
-			<Button type={'submit'} text={buttonText}/>
+			<Button text={buttonText} />
 		</form>
 	);
 }

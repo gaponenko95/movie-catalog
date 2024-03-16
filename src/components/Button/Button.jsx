@@ -1,10 +1,10 @@
 import './Button.css';
 
-function Button({ text, onClick, type }) {
+function Button({ text, onClick }) {
 	return (
-		<>
-			<button type={type} className="button" onClick={onClick}>{text}</button>
-		</>
+		<button type='submit' className='button' onClick={onClick}>
+			{text}
+		</button>
 	);
 }
 
