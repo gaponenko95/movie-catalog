@@ -1,26 +1,30 @@
-.navigation__item {
+.navItem {
     display: flex;
     align-items: center;
     color: #a8aebf;
     letter-spacing: 0.02em;
 }
 
-.navigation__item:hover {
+.navItem:hover {
     color: #fff;
 }
 
-.navigation__item--active {
+.navItemActive {
     color: #fff;
 }
 
-/* NavItem.css */
-.counter-icon {
+.counterIcon {
     width: 24px;
     height: 24px;
     position: relative;
 }
 
-.counter-icon__circle {
+.counterIcon:hover {
+    cursor: pointer;
+
+}
+
+.counterIconCircle {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -32,6 +36,6 @@
     font-size: 14px;
 }
 
-.counter-icon__count {
+.counterIconCount {
     font-weight: bold;
 }

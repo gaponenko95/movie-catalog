@@ -1,4 +1,4 @@
-.navigation__list {
+.navigationList {
     display: flex;
     gap: 32px;
 }

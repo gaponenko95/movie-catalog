@@ -1,9 +1,10 @@
-import './MainForm.css';
-import Button from '../Button/Button.jsx';
+import styles from './MainForm.module.css';
+import cn from 'classnames';
+import Button from '../Button/Button';
 
 function MainForm({ placeholder, icon, buttonText, column, onSubmit }) {
-	const formClass = `form ${column ? 'form--column' : ''}`;
-	const inputClass = `form__input ${icon === 'search' ? 'form__input--icon' : ''}`;
+	const formClass = cn(styles.form, column && styles.formColumn);
+	const inputClass = cn(styles.formInput, icon === 'search' && styles.formInputIcon);
 
 	return (
 		<form className={formClass} onSubmit={onSubmit}>

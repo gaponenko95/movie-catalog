@@ -1,4 +1,4 @@
-.movie-item {
+.movieItem {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -12,22 +12,22 @@
     cursor: pointer;
 }
 
-.movie-item:hover {
+.movieItem:hover {
     border: 1px solid #7b6ef6;
 }
 
-.movie-item__image {
+.movieItemImage {
     border-radius: 8px;
 }
 
-.movie-item__body {
+.movieItemBody {
     padding: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.movie-item__title {
+.movieItemTitle {
     font-weight: 600;
     font-size: 16px;
 

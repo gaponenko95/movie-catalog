@@ -1,4 +1,5 @@
-import './NavItem.css';
+import styles from './NavItem.module.css';
+import classNames from 'classnames';
 import Link from '../Link/Link.jsx';
 
 const iconMap = {
@@ -8,23 +9,23 @@ const iconMap = {
 
 function renderIcon(icon) {
 	if (iconMap[icon]) {
-		return <img className='navigation__item-icon' src={iconMap[icon]} alt={icon} />;
+		return <img src={iconMap[icon]} alt={icon} />;
 	}
 	return null;
 }
 
 function NavItem({ text, icon, counter, active, href }) {
-	const isActive = active ? 'navigation__item--active' : '';
+	const isActive = active ? styles.navItemActive : '';
 
 	return (
-		<li className={`navigation__item ${isActive}`}>
+		<li className={classNames(styles.navItem, isActive)}>
 			<Link href={href}>
 				{text}
 				{renderIcon(icon)}
 				{counter && (
-					<div className='counter-icon'>
-						<div className='counter-icon__circle'>
-							<span className='counter-icon__count'>2</span>
+					<div className={styles.counterIcon}>
+						<div className={styles.counterIconCircle}>
+							<span className={styles.counterIconCount}>2</span>
 						</div>
 					</div>
 				)}
