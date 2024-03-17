@@ -75,9 +75,9 @@ function App() {
 
 	const searchMovies = e => {
 		e.preventDefault();
-		const searchValue = new FormData(e.target).get('search');
+		const { value } = e.target.search;
 		const filteredMovies = MOVIES_DATA.filter(movie =>
-			movie.title.toLowerCase().includes(searchValue.toLowerCase())
+			movie.title.toLowerCase().includes(value.toLowerCase())
 		);
 		setMovies([...filteredMovies]);
 	};
