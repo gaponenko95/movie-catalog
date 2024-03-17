@@ -1,9 +1,9 @@
-import './Navigation.css';
+import styles from './Navigation.module.css';
 
 function Navigation({ children }) {
 	return (
-		<nav className='navigation'>
-			<ul className='navigation__list'>{children}</ul>
+		<nav>
+			<ul className={styles.navigationList}>{children}</ul>
 		</nav>
 	);
 }

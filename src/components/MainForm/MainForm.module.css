@@ -4,14 +4,13 @@
     align-items: center;
 }
 
-.form--column {
+.formColumn {
     flex-direction: column;
     align-items: start;
     gap: 27px;
 }
 
-
-.form__input {
+.formInput {
     display: flex;
     border: 1px solid #323b54;
     border-radius: 12px;
@@ -25,31 +24,31 @@
     color: #475069;
 }
 
-.form__input--icon {
+.formInputIcon {
     padding: 24px 16px 24px 56px;
     background-image: url("/search.svg");
     background-repeat: no-repeat;
     background-position: 16px center;
 }
 
-.form__input::placeholder {
+.formInput::placeholder {
     color: #475069;
 }
 
-.form__input:focus {
+.formInput:focus {
     outline: none;
     color: white;
     border: 1px solid #7b6ef6;
 }
 
-.form__input:focus::placeholder {
+.formInput:focus::placeholder {
     color: transparent;
 }
 
-.form__input:hover {
+.formInput:hover {
     border: 1px solid #7b6ef6;
 }
 
-.form__input::-webkit-search-cancel-button {
+.formInput::-webkit-search-cancel-button {
     cursor: pointer;
 }

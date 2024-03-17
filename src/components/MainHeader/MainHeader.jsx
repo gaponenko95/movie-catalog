@@ -1,7 +1,7 @@
-import './MainHeader.css';
+import styles from './MainHeader.module.css';
 
 function MainHeader({ children }) {
-	return <div className='main__header'>{children}</div>;
+	return <div className={styles.mainHeader}>{children}</div>;
 }
 
 export default MainHeader;

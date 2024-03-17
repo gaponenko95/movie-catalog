@@ -1,8 +1,8 @@
-import './Link.css';
+import styles from './Link.module.css';
 
 function Link({ children, href }) {
 	return (
-		<a className='link' href={href}>
+		<a className={styles.link} href={href}>
 			{children}
 		</a>
 	);

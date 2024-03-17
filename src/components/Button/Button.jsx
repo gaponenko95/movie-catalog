@@ -1,8 +1,8 @@
-import './Button.css';
+import styles from './Button.module.css';
 
 function Button({ text, onClick }) {
 	return (
-		<button type='submit' className='button' onClick={onClick}>
+		<button type='submit' className={styles.button} onClick={onClick}>
 			{text}
 		</button>
 	);
