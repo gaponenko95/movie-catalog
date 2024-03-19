@@ -10,6 +10,7 @@ import MainHeader from './components/MainHeader/MainHeader.jsx';
 import MainForm from './components/MainForm/MainForm.jsx';
 import MovieList from './components/MovieList/MovieList.jsx';
 import { useState } from 'react';
+import LoginForm from './components/LoginForm/LoginForm.jsx';
 
 const MOVIES_DATA = [
 	{
@@ -95,6 +96,10 @@ function App() {
 				</Navigation>
 			</Header>
 			<Main>
+				<MainHeader>
+					<MainTitle text='Вход' />
+					<LoginForm />
+				</MainHeader>
 				<MainHeader>
 					<MainTitle text='Поиск' />
 					<Text small>
