@@ -1,0 +1,46 @@
+.input {
+    display: flex;
+    border: 1px solid #323b54;
+    border-radius: 12px;
+    padding: 24px 16px;
+    width: 384px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.14286;
+    color: #475069;
+}
+
+.inputIcon {
+    padding: 24px 16px 24px 56px;
+    background-image: url("/search.svg");
+    background-repeat: no-repeat;
+    background-position: 16px center;
+}
+
+.input::placeholder {
+    color: #475069;
+}
+
+.input:focus {
+    outline: none;
+    color: white;
+    border: 1px solid #7b6ef6;
+}
+
+.input:focus::placeholder {
+    color: transparent;
+}
+
+.input:hover {
+    border: 1px solid #7b6ef6;
+}
+
+.input::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+.invalid {
+    border: 1px solid red;
+}
