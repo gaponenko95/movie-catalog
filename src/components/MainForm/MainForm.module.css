@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.form--column {
+.formColumn {
     flex-direction: column;
     align-items: start;
     gap: 27px;
