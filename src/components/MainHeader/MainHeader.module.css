@@ -1,6 +1,6 @@
 .mainHeader {
     display: flex;
     flex-direction: column;
-    width: 588px;
+    max-width: 588px;
     gap: 24px;
 }

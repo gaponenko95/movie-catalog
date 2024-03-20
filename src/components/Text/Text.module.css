@@ -2,7 +2,7 @@
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 1.6;
-	color: #8e95a9;
+	color: var(--color-gray);
 }
 
 .textSmall {
