@@ -1,0 +1,25 @@
+:root {
+    --color-background: #121829;
+    --color-light: #ffffff;
+    --color-light-alt: #ebeef5;
+    --color-accent: #7b6ef6;
+    --color-gray: #a8aebf;
+    --color-gray-alt: #c3c8d4;
+    --color-green: #37d8a7;
+    --color-gray-input: #475069;
+    --color-background-input: rgba(0, 0, 0, 0.1);
+    --color-rating: #ffad49;
+    --color-background-rating: rgba(0, 0, 0, 0.65);
+    --color-background-movie: rgba(32, 40, 62, 0.8);
+    --color-invalid: #ff5d5d;
+
+    --back-drop-filter: blur(24px);
+    --back-drop-filter-small: blur(8px);
+    --back-drop-filter-large: blur(80px);
+
+    --border-radius: 12px;
+    --border-radius-small: 8px;
+    --border-radius-large: 24px;
+
+    --font-family: 'Poppins', system-ui, sans-serif;
+}

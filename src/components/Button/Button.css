@@ -1,10 +1,9 @@
 .button {
     border: none;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     padding: 0 34px;
     height: 60px;
-    background: #7b6ef6;
-    cursor: pointer;
+    background: var(--color-accent);
 }
 
 .button:hover {

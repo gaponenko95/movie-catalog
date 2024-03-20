@@ -79,7 +79,7 @@ function App() {
 		const filteredMovies = MOVIES_DATA.filter(movie =>
 			movie.title.toLowerCase().includes(value.toLowerCase())
 		);
-		setMovies([...filteredMovies]);
+		setMovies(filteredMovies);
 	};
 
 	return (

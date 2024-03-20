@@ -7,11 +7,11 @@
     font-weight: 600;
     font-size: 16px;
     letter-spacing: 0.02em;
-    color: #7b6ef6;
+    color: var(--color-accent);
     background: transparent;
     border: none;
 }
 
 .favorites-button--green {
-    color: #37d8a7;
+    color: var(--color-green);
 }

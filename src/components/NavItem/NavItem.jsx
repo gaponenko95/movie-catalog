@@ -6,13 +6,6 @@ const iconMap = {
 	profile: '/profile.svg'
 };
 
-function renderIcon(icon) {
-	if (iconMap[icon]) {
-		return <img className='navigation__item-icon' src={iconMap[icon]} alt={icon} />;
-	}
-	return null;
-}
-
 function NavItem({ text, icon, counter, active, href }) {
 	const isActive = active ? 'navigation__item--active' : '';
 
@@ -20,7 +13,13 @@ function NavItem({ text, icon, counter, active, href }) {
 		<li className={`navigation__item ${isActive}`}>
 			<Link href={href}>
 				{text}
-				{renderIcon(icon)}
+				{icon && (
+					<img
+						className='navigation__item-icon'
+						src={iconMap[icon]}
+						alt={icon}
+					/>
+				)}
 				{counter && (
 					<div className='counter-icon'>
 						<div className='counter-icon__circle'>
