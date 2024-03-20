@@ -8,7 +8,6 @@ import Main from './Layouts/Main/Main.jsx';
 import MainHeader from './components/MainHeader/MainHeader.jsx';
 import LoginForm from './components/LoginForm/LoginForm.jsx';
 import { useLocalStorage } from './hooks/use-localstorage.hook.js';
-import Button from './components/Button/Button.jsx';
 import { useEffect, useState } from 'react';
 import MainForm from './components/MainForm/MainForm.jsx';
 import MovieList from './components/MovieList/MovieList.jsx';
@@ -136,8 +135,12 @@ function App() {
 								href='#'
 								icon='profile'
 							/>
-							<NavItem text='Выйти' href='#' icon='login' />
-							<Button text='Выйти' onClick={logout} />
+							<NavItem
+								text='Выйти'
+								href='#'
+								icon='login'
+								onClick={logout}
+							/>
 						</>
 					) : (
 						<NavItem text='Войти' href='#' icon='login' />
