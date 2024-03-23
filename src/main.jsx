@@ -5,7 +5,9 @@ import App from './App.jsx';
 import { UserContextProvider } from './context/user.context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<UserContextProvider>
-		<App />
-	</UserContextProvider>
+	<React.StrictMode>
+		<UserContextProvider>
+			<App />
+		</UserContextProvider>
+	</React.StrictMode>
 );
