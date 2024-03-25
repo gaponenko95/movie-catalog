@@ -4,3 +4,8 @@
 	letter-spacing: -0.02em;
 	color: var(--color-light-alt);
 }
+
+.small {
+	font-size: 48px;
+	line-height: 1.16667;
+}
