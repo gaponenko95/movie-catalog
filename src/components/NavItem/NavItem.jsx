@@ -1,4 +1,5 @@
-import './NavItem.css';
+import styles from './NavItem.module.css';
+import classNames from 'classnames';
 import Link from '../Link/Link.jsx';
 
 const iconMap = {
@@ -6,24 +7,24 @@ const iconMap = {
 	profile: '/profile.svg'
 };
 
-function NavItem({ text, icon, counter, active, href }) {
-	const isActive = active ? 'navigation__item--active' : '';
+function NavItem({ text, icon, counter, active, href, onClick }) {
+	const isActive = active ? styles.navItemActive : '';
 
 	return (
-		<li className={`navigation__item ${isActive}`}>
-			<Link href={href}>
+		<li className={classNames(styles.navItem, isActive)}>
+			<Link href={href} onClick={onClick}>
 				{text}
 				{icon && (
 					<img
-						className='navigation__item-icon'
+						className={styles.navigationItemIcon}
 						src={iconMap[icon]}
 						alt={icon}
 					/>
 				)}
 				{counter && (
-					<div className='counter-icon'>
-						<div className='counter-icon__circle'>
-							<span className='counter-icon__count'>2</span>
+					<div className={styles.counterIcon}>
+						<div className={styles.counterIconCircle}>
+							<span className={styles.counterIconCount}>2</span>
 						</div>
 					</div>
 				)}

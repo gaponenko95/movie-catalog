@@ -1,4 +1,4 @@
-.movie-item__rating {
+.movieItemRating {
     display: flex;
     position: absolute;
     gap: 4px;
@@ -13,7 +13,6 @@
     background: var(--color-background-rating);
     font-weight: 400;
     font-size: 16px;
-
     line-height: 1.5;
     color: var(--color-rating);
 }

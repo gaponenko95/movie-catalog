@@ -1,15 +1,14 @@
-import Text from './components/Text/Text';
-import MainTitle from './components/MainTitle/MainTitle';
-import Header from './Layouts/Header/Header.jsx';
-import Link from './components/Link/Link.jsx';
-import Logo from './components/Logo/Logo.jsx';
-import Navigation from './components/Navigation/Navigation.jsx';
-import NavItem from './components/NavItem/NavItem.jsx';
-import Main from './Layouts/Main/Main.jsx';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from './context/user.context.jsx';
+import Header from './layouts/Header/Header.jsx';
+import Main from './layouts/Main/Main.jsx';
 import MainHeader from './components/MainHeader/MainHeader.jsx';
-import MainForm from './components/MainForm/MainForm.jsx';
+import SearchForm from './components/SearchForm/SearchForm.jsx';
+import MainTitle from './components/MainTitle/MainTitle.jsx';
+import LoginForm from './components/LoginForm/LoginForm.jsx';
 import MovieList from './components/MovieList/MovieList.jsx';
-import { useState } from 'react';
+import Text from './components/Text/Text.jsx';
+import { useLocalStorage } from './hooks/use-localstorage.hook.js';
 
 const MOVIES_DATA = [
 	{
@@ -71,44 +70,60 @@ const MOVIES_DATA = [
 ];
 
 function App() {
+	const [accounts, setStoredAccounts] = useLocalStorage('accounts');
 	const [movies, setMovies] = useState(MOVIES_DATA);
+	const { user, setUser } = useContext(UserContext);
 
-	const searchMovies = e => {
-		e.preventDefault();
-		const { value } = e.target.search;
-		const filteredMovies = MOVIES_DATA.filter(movie =>
-			movie.title.toLowerCase().includes(value.toLowerCase())
+	useEffect(() => {
+		setUser(accounts.find(account => account.isLogined) || false);
+	}, [accounts]);
+
+	const login = newAccount => {
+		const updatedAccounts = accounts.map(account =>
+			account.name === newAccount.name ? { ...account, isLogined: true } : account
 		);
-		setMovies(filteredMovies);
+
+		if (!updatedAccounts.some(account => account.name === newAccount.name)) {
+			updatedAccounts.push({ name: newAccount.name, isLogined: true });
+		}
+
+		setStoredAccounts(updatedAccounts);
 	};
+
+	const logout = () => {
+		setStoredAccounts(
+			accounts.map(account =>
+				account.isLogined ? { ...account, isLogined: false } : account
+			)
+		);
+	};
+
+	const searchMovies = e =>
+		setMovies(
+			MOVIES_DATA.filter(({ title }) =>
+				title.toLowerCase().includes(e.toLowerCase())
+			)
+		);
 
 	return (
 		<>
-			<Header>
-				<Link href='#'>
-					<Logo />
-				</Link>
-				<Navigation>
-					<NavItem text='Поиск фильмов' href='#' active />
-					<NavItem text='Мои фильмы' href='#' counter />
-					<NavItem text='Войти' href='#' icon='login' />
-				</Navigation>
-			</Header>
+			<Header onClick={logout} />
 			<Main>
 				<MainHeader>
-					<MainTitle text='Поиск' />
-					<Text small>
-						Введите название фильма, сериала или мультфильма для поиска и
-						добавления в избранное.
-					</Text>
-					<MainForm
-						placeholder='Введите название'
-						buttonText='Искать'
-						icon='search'
-						onSubmit={searchMovies}
-					/>
+					<MainTitle text={user ? 'Поиск' : 'Вход'} />
+					{user ? (
+						<>
+							<Text small>
+								Введите название фильма, сериала или мультфильма для
+								поиска и добавления в избранное.
+							</Text>
+							<SearchForm onSubmit={searchMovies} />
+						</>
+					) : (
+						<LoginForm onSubmit={login} />
+					)}
 				</MainHeader>
-				<MovieList movies={movies} />
+				{user && <MovieList movies={movies} />}
 			</Main>
 		</>
 	);

@@ -1,7 +1,8 @@
-.movie-list {
+.movieList {
+
 }
 
-.movie-list__list {
+.movieListList {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;

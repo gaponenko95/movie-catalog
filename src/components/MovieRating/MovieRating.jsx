@@ -1,10 +1,10 @@
-import './MovieRating.css';
+import styles from './MovieRating.module.css';
 
 function MovieRating({ rating }) {
 	return (
-		<div className='movie-item__rating'>
-			<img src='/star.svg' className='movie-item__rating__img' />
-			<span className='movie-item__rating__text'>{rating}</span>
+		<div className={styles.movieItemRating}>
+			<img src='/star.svg' alt='Рейтинг' />
+			{rating}
 		</div>
 	);
 }

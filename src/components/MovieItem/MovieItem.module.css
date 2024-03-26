@@ -1,4 +1,4 @@
-.movie-item {
+.movieItem {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -12,22 +12,22 @@
     cursor: pointer;
 }
 
-.movie-item:hover {
+.movieItem:hover {
     border: 1px solid var(--color-accent);
 }
 
-.movie-item__image {
+.movieItemImage {
     border-radius: var(--border-radius-small);
 }
 
-.movie-item__body {
+.movieItemBody {
     padding: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.movie-item__title {
+.movieItemTitle {
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;

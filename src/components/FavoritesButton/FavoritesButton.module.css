@@ -1,4 +1,4 @@
-.favorites-button {
+.favoritesButton {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -12,6 +12,6 @@
     border: none;
 }
 
-.favorites-button--green {
+.favoritesButtonGreen {
     color: var(--color-green);
 }

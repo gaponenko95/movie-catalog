@@ -1,14 +1,14 @@
-import './MovieItem.css';
+import styles from './MovieItem.module.css';
 import MovieRating from '../MovieRating/MovieRating.jsx';
 import FavoritesButton from '../FavoritesButton/FavoritesButton.jsx';
 
 function MovieItem({ image, title, rating, favorite }) {
 	return (
-		<li className='movie-item'>
-			<img className='movie-item__image' src={image} alt={title} />
+		<li className={styles.movieItem}>
+			<img className={styles.movieItemImage} src={image} alt={title} />
 			<MovieRating rating={rating} />
-			<div className='movie-item__body'>
-				<p className='movie-item__title'>{title}</p>
+			<div className={styles.movieItemBody}>
+				<p className={styles.movieItemTitle}>{title}</p>
 				<FavoritesButton favorite={favorite} />
 			</div>
 		</li>
