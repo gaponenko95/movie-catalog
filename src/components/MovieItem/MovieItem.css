@@ -1,0 +1,36 @@
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: var(--border-radius);
+    width: 282px;
+    height: 520px;
+    padding: 7px 7px 15px 7px;
+    backdrop-filter: var(--back-drop-filter-large);
+    background: var(--color-background-movie);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.movie-item:hover {
+    border: 1px solid var(--color-accent);
+}
+
+.movie-item__image {
+    border-radius: var(--border-radius-small);
+}
+
+.movie-item__body {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.movie-item__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-light-alt);
+}

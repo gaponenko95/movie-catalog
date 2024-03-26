@@ -1,0 +1,6 @@
+.main__header {
+    display: flex;
+    flex-direction: column;
+    max-width: 588px;
+    gap: 24px;
+}
