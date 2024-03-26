@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 
-export function useLocalStorage(
-	key: string
-): [{ name: string; isLogined: boolean }[], (newData: { name: string; isLogined: boolean }[]) => void] {
-	const [data, setData] = useState<{ name: string; isLogined: boolean }[]>([]);
+import { User } from '../context/user.props';
+
+export function useLocalStorage(key: string): [User[], (newData: User[]) => void] {
+	const [data, setData] = useState<User[]>([]);
 
 	useEffect(() => {
 		const item = localStorage.getItem(key);
 		if (item) {
-			const res = JSON.parse(item);
+			const res: User[] = JSON.parse(item);
 			setData(res);
 		}
-	}, []);
+	}, [key]);
 
-	const saveData = (newData: { name: string; isLogined: boolean }[]) => {
+	const saveData = (newData: User[]) => {
 		localStorage.setItem(key, JSON.stringify(newData));
 		setData(newData);
 	};
