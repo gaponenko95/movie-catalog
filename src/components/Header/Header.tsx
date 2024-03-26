@@ -1,23 +1,22 @@
 import cn from 'classnames';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import { UserContext } from '../../context/user.context';
-import { MOVIES_DATA } from '../../helpers/moviesData';
 import Logo from '../Logo/Logo';
 import styles from './Header.module.css';
 
 export function Header() {
 	const { user, setStoredAccounts, accounts } = useContext(UserContext);
-	const [movieCounter, setMovieCounter] = useState<number>(0);
+	// const [movieCounter, setMovieCounter] = useState<number>(0);
 
 	const logout = () => {
 		setStoredAccounts(accounts.map((account) => (account.isLogined ? { ...account, isLogined: false } : account)));
 	};
 
-	useEffect(() => {
-		setMovieCounter(MOVIES_DATA.filter(({ favorite }) => favorite).length);
-	}, [movieCounter]);
+	// useEffect(() => {
+	// 	setMovieCounter(MOVIES_DATA.filter(({ favorite }) => favorite).length);
+	// }, [movieCounter]);
 
 	return (
 		<header className={styles.header}>
@@ -36,11 +35,11 @@ export function Header() {
 							to={'/favorites'}
 							className={({ isActive }) => cn(styles.link, { [styles.navItemActive]: isActive })}>
 							Мои фильмы
-							<div className={styles.counterIcon}>
+							{/* <div className={styles.counterIcon}>
 								<div className={styles.counterIconCircle}>
-									<span className={styles.counterIconCount}>{movieCounter}</span>
+									<span className={styles.counterIconCount}>1</span>
 								</div>
-							</div>
+							</div> */}
 						</NavLink>
 					</li>
 					{user.isLogined ? (

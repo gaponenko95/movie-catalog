@@ -1,3 +1,3 @@
 export interface MovieRatingProps {
-	rating: string;
+	rating: number;
 }

@@ -1,20 +1,5 @@
-.movieList {
-
-}
-
 .movieListList {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-}
-
-.movieListEmpty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    align-self: center;
-    justify-self: center;
-    width: 100%;
-    margin-top: 20px;
 }

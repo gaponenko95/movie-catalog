@@ -1,5 +1,6 @@
-import styles from './Text.module.css';
 import cn from 'classnames';
+
+import styles from './Text.module.css';
 import { TextProps } from './Text.props'
 
 function Text({ children, small }: TextProps) {

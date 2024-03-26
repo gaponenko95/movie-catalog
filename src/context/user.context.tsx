@@ -15,7 +15,7 @@ export const UserContextProvider: FC<UserContextProviderProps> = ({ children }) 
 	const [accounts, setStoredAccounts] = useLocalStorage('accounts');
 
 	useEffect(() => {
-		setUser(accounts.find((account) => account.isLogined) || { name: '', isLogined: false });
+		setUser(accounts.find((account: User) => account.isLogined) || { name: '', isLogined: false });
 	}, [accounts]);
 
 	return <UserContext.Provider value={{ user, setUser, accounts, setStoredAccounts }}>{children}</UserContext.Provider>;

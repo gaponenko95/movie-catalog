@@ -1,5 +1,7 @@
-import { MovieItemProps } from '../MovieItem/MovieItem.props';
+import { Movie } from '../../interfaces/movie.interface'
 
 export interface MovieListProps {
-	movies: MovieItemProps[];
+	movies: Movie[];
+	error?: string;
+	isLoading: boolean;
 }

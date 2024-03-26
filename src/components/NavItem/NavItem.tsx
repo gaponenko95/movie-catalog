@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 import styles from './NavItem.module.css';
 import { NavItemProps } from './NavItem.props';
 
-// const iconMap = {
-// 	login: '/login.svg',
-// 	profile: '/profile.svg'
-// };
-
 function NavItem({ children, icon, counter, to, onClick }: NavItemProps) {
 	return (
 		<li className={classNames(styles.navItem)}>

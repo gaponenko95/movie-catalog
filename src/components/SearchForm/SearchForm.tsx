@@ -1,8 +1,9 @@
 import { FormEvent } from 'react';
-import { SearchFormProps } from './SearchForm.props';
+
 import Button from '../Button/Button';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
+import { SearchFormProps } from './SearchForm.props';
 
 export type SearchForm = {
 	search: {
