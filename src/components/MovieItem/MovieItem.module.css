@@ -17,6 +17,8 @@
 }
 
 .movieItemImage {
+    min-height: 400px;
+    object-fit: cover;
     border-radius: var(--border-radius-small);
 }
 
